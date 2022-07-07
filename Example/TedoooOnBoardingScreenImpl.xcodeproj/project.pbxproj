@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		7EA2BA1C7BBA30A0D9471F3C /* Pods_TedoooOnBoardingScreenImpl_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFE1047A45A94D353D192A63 /* Pods_TedoooOnBoardingScreenImpl_Tests.framework */; };
+		897AE70C2876CDC1007B7489 /* Mockers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897AE70B2876CDC1007B7489 /* Mockers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +30,7 @@
 
 /* Begin PBXFileReference section */
 		1553C04B060CFF6958D3E30A /* Pods-TedoooOnBoardingScreenImpl_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedoooOnBoardingScreenImpl_Tests.debug.xcconfig"; path = "Target Support Files/Pods-TedoooOnBoardingScreenImpl_Tests/Pods-TedoooOnBoardingScreenImpl_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		2F2766951B9435D49BEB9F06 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		2F2766951B9435D49BEB9F06 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		3D1A4506BCCB7188581A0E41 /* Pods-TedoooOnBoardingScreenImpl_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedoooOnBoardingScreenImpl_Example.release.xcconfig"; path = "Target Support Files/Pods-TedoooOnBoardingScreenImpl_Example/Pods-TedoooOnBoardingScreenImpl_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* TedoooOnBoardingScreenImpl_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TedoooOnBoardingScreenImpl_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,9 +42,10 @@
 		607FACE51AFB9204008FA782 /* TedoooOnBoardingScreenImpl_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TedoooOnBoardingScreenImpl_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		73956803AFCDD70C1638AAA4 /* TedoooOnBoardingScreenImpl.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = TedoooOnBoardingScreenImpl.podspec; path = ../TedoooOnBoardingScreenImpl.podspec; sourceTree = "<group>"; };
-		73FF10C28FED0847ECB91B62 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		73956803AFCDD70C1638AAA4 /* TedoooOnBoardingScreenImpl.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TedoooOnBoardingScreenImpl.podspec; path = ../TedoooOnBoardingScreenImpl.podspec; sourceTree = "<group>"; };
+		73FF10C28FED0847ECB91B62 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		85F17A6907777971FDCDABA6 /* Pods_TedoooOnBoardingScreenImpl_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TedoooOnBoardingScreenImpl_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		897AE70B2876CDC1007B7489 /* Mockers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockers.swift; sourceTree = "<group>"; };
 		AAE62D54FFD622F9E9C6CE4C /* Pods-TedoooOnBoardingScreenImpl_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedoooOnBoardingScreenImpl_Example.debug.xcconfig"; path = "Target Support Files/Pods-TedoooOnBoardingScreenImpl_Example/Pods-TedoooOnBoardingScreenImpl_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E5903D2BA7D189BF1CA81C6E /* Pods-TedoooOnBoardingScreenImpl_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedoooOnBoardingScreenImpl_Tests.release.xcconfig"; path = "Target Support Files/Pods-TedoooOnBoardingScreenImpl_Tests/Pods-TedoooOnBoardingScreenImpl_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		EFE1047A45A94D353D192A63 /* Pods_TedoooOnBoardingScreenImpl_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TedoooOnBoardingScreenImpl_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,7 @@
 		607FACD21AFB9204008FA782 /* Example for TedoooOnBoardingScreenImpl */ = {
 			isa = PBXGroup;
 			children = (
+				897AE70A2876CDB6007B7489 /* mocks */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -139,6 +142,14 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		897AE70A2876CDB6007B7489 /* mocks */ = {
+			isa = PBXGroup;
+			children = (
+				897AE70B2876CDC1007B7489 /* Mockers.swift */,
+			);
+			name = mocks;
+			sourceTree = "<group>";
+		};
 		92EAAB06271EEE192E77E12D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,7 +158,6 @@
 				1553C04B060CFF6958D3E30A /* Pods-TedoooOnBoardingScreenImpl_Tests.debug.xcconfig */,
 				E5903D2BA7D189BF1CA81C6E /* Pods-TedoooOnBoardingScreenImpl_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -228,6 +238,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -292,11 +303,37 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TedoooOnBoardingScreenImpl_Example/Pods-TedoooOnBoardingScreenImpl_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AlignedCollectionViewFlowLayout/AlignedCollectionViewFlowLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/CreateShopFlowApi/CreateShopFlowApi.framework",
+				"${BUILT_PRODUCTS_DIR}/Dwifft/Dwifft.framework",
+				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/TedoooCategoriesApi/TedoooCategoriesApi.framework",
+				"${BUILT_PRODUCTS_DIR}/TedoooCombine/TedoooCombine.framework",
+				"${BUILT_PRODUCTS_DIR}/TedoooFullScreenHud/TedoooFullScreenHud.framework",
+				"${BUILT_PRODUCTS_DIR}/TedoooOnBoardingApi/TedoooOnBoardingApi.framework",
+				"${BUILT_PRODUCTS_DIR}/TedoooOnBoardingScreen/TedoooOnBoardingScreen.framework",
 				"${BUILT_PRODUCTS_DIR}/TedoooOnBoardingScreenImpl/TedoooOnBoardingScreenImpl.framework",
+				"${BUILT_PRODUCTS_DIR}/TedoooSkeletonView/TedoooSkeletonView.framework",
+				"${BUILT_PRODUCTS_DIR}/TedoooStyling/TedoooStyling.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlignedCollectionViewFlowLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CreateShopFlowApi.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dwifft.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TedoooCategoriesApi.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TedoooCombine.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TedoooFullScreenHud.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TedoooOnBoardingApi.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TedoooOnBoardingScreen.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TedoooOnBoardingScreenImpl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TedoooSkeletonView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TedoooStyling.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -352,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				897AE70C2876CDC1007B7489 /* Mockers.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);

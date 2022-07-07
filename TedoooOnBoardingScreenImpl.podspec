@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TedoooOnBoardingScreenImpl'
-  s.version          = '1.0.0'
-  s.summary          = '{{ SUMMARY }}'
+  s.version          = '1.1.0'
+  s.summary          = 'TedoooOnBoardingScreenImpl'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,23 +18,40 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-{{ DESCRIPTION }}
+TedoooOnBoardingScreenImpl
                        DESC
 
-  s.homepage         = 'https://github.com/morapelker/{{ REPO_NAME }}'
+  s.homepage         = 'https://github.com/morapelker/tedooo-ios-tedooo-on-boarding-screen-impl'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'morapelker' => 'morapelker@gmail.com' }
-  s.source           = { :git => 'https://github.com/morapelker/{{ REPO_NAME }}.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/morapelker/tedooo-ios-tedooo-on-boarding-screen-impl.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '13.0'
 
   s.source_files = 'TedoooOnBoardingScreenImpl/Classes/**/*'
   s.swift_version = '5.0'
-  # s.resource_bundles = {
-  #   'TedoooOnBoardingScreenImpl' => ['TedoooOnBoardingScreenImpl/Assets/*.png']
-  # }
+  
+  s.resources = ['TedoooOnBoardingScreenImpl/Assets/*.{xcassets}']
+  s.resource_bundles = {
+    'TedoooOnBoardingScreenImpl' => ['TedoooOnBoardingScreenImpl/Assets/*']
+  }
+  
+  
+  s.dependency 'Swinject'
+  s.dependency 'TedoooCombine'
+  s.dependency 'TedoooOnBoardingApi'
+  s.dependency 'TedoooOnBoardingScreen'
+  s.dependency 'TedoooStyling'
+  s.dependency 'TedoooCategoriesApi'
+  s.dependency 'Kingfisher'
+  s.dependency 'AlignedCollectionViewFlowLayout'
+  s.dependency 'Dwifft'
+  s.dependency 'JGProgressHUD'
+  s.dependency 'TedoooFullScreenHud'
+  s.dependency 'TedoooSkeletonView'
+  s.dependency 'CreateShopFlowApi'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

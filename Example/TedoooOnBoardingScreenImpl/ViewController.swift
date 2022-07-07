@@ -7,17 +7,40 @@
 //
 
 import UIKit
+import TedoooOnBoardingScreen
+import TedoooOnBoardingScreenImpl
+import Swinject
+import TedoooCategoriesApi
+import TedoooOnBoardingApi
+import CreateShopFlowApi
+import TedoooCombine
 
 class ViewController: UIViewController {
 
+    private var bag = CombineBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        let container = Container()
+        
+        container.register(TedoooCategoriesApi.CategoriesProvider.self) { _ in
+            return Mockers.shared
+        }.inObjectScope(.container)
+        container.register(TedoooOnBoardingApi.self) { _ in
+            return Mockers.shared
+        }.inObjectScope(.container)
+        container.register(CreateShopFlowApi.self) { _ in
+            return Mockers.shared
+        }.inObjectScope(.container)
+        
+        DispatchQueue.main.async {
+            let flow = InitialFlow(container: container)
+            flow.launchFlow(in: self).sink { result in
+                print("result from main app", result)
+            } => self.bag
+        }
+
     }
 
 }
