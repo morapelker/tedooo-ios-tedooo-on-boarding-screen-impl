@@ -13,7 +13,8 @@ import TedoooOnBoardingApi
 import CreateShopFlowApi
 
 class Mockers: CategoriesProvider, TedoooOnBoardingApi, CreateShopFlowApi {
-    func startFlow(in viewController: UIViewController) -> AnyPublisher<AddShopResult, AddShopError> {
+  
+    func startFlow(in viewController: UIViewController, fromOnBoarding: Bool) -> AnyPublisher<AddShopResult, AddShopError> {
         let vc = UIViewController()
         vc.view.backgroundColor = .red
         vc.modalPresentationStyle = .overCurrentContext

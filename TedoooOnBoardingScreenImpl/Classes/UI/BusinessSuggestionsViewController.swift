@@ -173,7 +173,7 @@ class BusinessSuggestionViewController: UIViewController {
     @IBAction func nextClicked() {
         _ = viewModel.finishOnBoarding()
         if let navController = navigationController, viewModel.interests.value.contains("sell") {
-            DIContainer.shared.resolve(CreateShopFlowApi.self).startFlow(in: navController).sink { [weak self] result in
+            DIContainer.shared.resolve(CreateShopFlowApi.self).startFlow(in: navController, fromOnBoarding: true).sink { [weak self] result in
                 switch result {
                 case .finished: break
                 case .failure:
