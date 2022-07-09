@@ -181,9 +181,10 @@ class BusinessSuggestionViewController: UIViewController {
                 }
             } receiveValue: { [weak self] result in
                 guard let self = self else { return }
-                self.viewModel.endSubject.send(result)
-                self.viewModel.endSubject.send(completion: .finished)
-                self.navigationController?.dismiss(animated: true)
+                self.dismiss(animated: true) {
+                    self.viewModel.endSubject.send(result)
+                    self.viewModel.endSubject.send(completion: .finished)
+                }
             } => bag
 
             return
