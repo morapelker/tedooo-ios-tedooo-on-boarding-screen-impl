@@ -11,7 +11,7 @@ import Swinject
 import Combine
 import CreateShopFlowApi
 
-public class InitialFlow {
+public class InitialFlow: TedoooOnBoardingScreen {
     
     public init(container: Container) {
         DIContainer.shared.registerContainer(container: container)
@@ -27,6 +27,14 @@ public class InitialFlow {
         viewController.present(navVc, animated: true)
         return vm.endSubject.eraseToAnyPublisher()
         
+    }
+    
+    public func launchFlow(inNavController navController: UINavigationController) -> AnyPublisher<AddShopResult, Never> {
+        let vc = InitialViewController.instantiate()
+        vc.modalPresentationStyle = .overCurrentContext
+        let vm = ActivityViewModel.get(navController: navController)
+        navController.pushViewController(vc, animated: true)
+        return vm.endSubject.eraseToAnyPublisher()
     }
     
 }

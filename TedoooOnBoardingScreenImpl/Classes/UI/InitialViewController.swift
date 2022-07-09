@@ -84,13 +84,6 @@ class InitialViewController: UIViewController {
     }
     
     @IBAction func nextClicked() {
-        let interests = viewModel.interests.value
-        if interests.isEmpty || interests.contains("sell") || interests.contains("buy") || interests.contains("other") {
-            let preferencesViewController = PreferencesViewController.instantiate()
-            navigationController?.pushViewController(preferencesViewController, animated: true)
-            return
-        }
-        viewModel.clearCategories()
         viewModel.confirmCategories()
         let vc = GroupSuggestionsViewController.instantiate()
         navigationController?.pushViewController(vc, animated: true)
