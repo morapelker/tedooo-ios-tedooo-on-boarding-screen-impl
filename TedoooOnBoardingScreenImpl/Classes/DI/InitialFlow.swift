@@ -33,6 +33,7 @@ public class InitialFlow: TedoooOnBoardingScreen {
         let vc = InitialViewController.instantiate()
         vc.modalPresentationStyle = .overCurrentContext
         let vm = ActivityViewModel.get(navController: navController)
+        navController.isNavigationBarHidden = true
         navController.pushViewController(vc, animated: true)
         return vm.endSubject.eraseToAnyPublisher()
     }
