@@ -184,6 +184,7 @@ class BusinessSuggestionViewController: UIViewController {
                         }
                     }
                 }
+                self?.viewModel.endSubject.send(completion: .finished)
             } receiveValue: { [weak self] result in
                 guard let self = self else { return }
                 result.vc.dismiss(animated: true) {
