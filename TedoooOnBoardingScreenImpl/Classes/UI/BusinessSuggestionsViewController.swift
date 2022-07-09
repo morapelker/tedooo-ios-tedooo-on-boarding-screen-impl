@@ -188,10 +188,8 @@ class BusinessSuggestionViewController: UIViewController {
             } receiveValue: { [weak self] result in
                 guard let self = self else { return }
                 result.vc.dismiss(animated: true) {
-                    self.dismiss(animated: true) {
-                        self.viewModel.endSubject.send(result)
-                        self.viewModel.endSubject.send(completion: .finished)
-                    }
+                    self.viewModel.endSubject.send(AddShopResult(vc: self, id: result.id, action: result.action))
+                    self.viewModel.endSubject.send(completion: .finished)
                 }
                 
             } => bag

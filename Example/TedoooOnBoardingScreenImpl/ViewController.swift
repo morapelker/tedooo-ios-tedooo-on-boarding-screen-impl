@@ -37,7 +37,9 @@ class ViewController: UIViewController {
         DispatchQueue.main.async {
             let flow = InitialFlow(container: container)
             flow.launchFlow(in: self).sink { result in
-                print("result from main app", result)
+                result.vc.dismiss(animated: true) {
+                    print("result from main app", result)
+                }
             } => self.bag
         }
 

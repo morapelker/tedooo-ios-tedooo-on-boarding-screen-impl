@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		7EA2BA1C7BBA30A0D9471F3C /* Pods_TedoooOnBoardingScreenImpl_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFE1047A45A94D353D192A63 /* Pods_TedoooOnBoardingScreenImpl_Tests.framework */; };
+		892795BE2879CAC5007A23BE /* TestNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892795BD2879CAC5007A23BE /* TestNavController.swift */; };
 		897AE70C2876CDC1007B7489 /* Mockers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897AE70B2876CDC1007B7489 /* Mockers.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		73956803AFCDD70C1638AAA4 /* TedoooOnBoardingScreenImpl.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TedoooOnBoardingScreenImpl.podspec; path = ../TedoooOnBoardingScreenImpl.podspec; sourceTree = "<group>"; };
 		73FF10C28FED0847ECB91B62 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		85F17A6907777971FDCDABA6 /* Pods_TedoooOnBoardingScreenImpl_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TedoooOnBoardingScreenImpl_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		892795BD2879CAC5007A23BE /* TestNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNavController.swift; sourceTree = "<group>"; };
 		897AE70B2876CDC1007B7489 /* Mockers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockers.swift; sourceTree = "<group>"; };
 		AAE62D54FFD622F9E9C6CE4C /* Pods-TedoooOnBoardingScreenImpl_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedoooOnBoardingScreenImpl_Example.debug.xcconfig"; path = "Target Support Files/Pods-TedoooOnBoardingScreenImpl_Example/Pods-TedoooOnBoardingScreenImpl_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E5903D2BA7D189BF1CA81C6E /* Pods-TedoooOnBoardingScreenImpl_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedoooOnBoardingScreenImpl_Tests.release.xcconfig"; path = "Target Support Files/Pods-TedoooOnBoardingScreenImpl_Tests/Pods-TedoooOnBoardingScreenImpl_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				892795BD2879CAC5007A23BE /* TestNavController.swift */,
 			);
 			name = "Example for TedoooOnBoardingScreenImpl";
 			path = TedoooOnBoardingScreenImpl;
@@ -392,6 +395,7 @@
 				897AE70C2876CDC1007B7489 /* Mockers.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				892795BE2879CAC5007A23BE /* TestNavController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
