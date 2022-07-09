@@ -176,15 +176,23 @@ class BusinessSuggestionViewController: UIViewController {
             DIContainer.shared.resolve(CreateShopFlowApi.self).startFlow(in: navController, fromOnBoarding: true).sink { [weak self] result in
                 switch result {
                 case .finished: break
-                case .failure:
-                    self?.dismiss(animated: true)
+                case .failure(let err):
+                    switch err {
+                    case .flowCancelled(let vc):
+                        vc.dismiss(animated: true) {
+                            self?.dismiss(animated: true)
+                        }
+                    }
                 }
             } receiveValue: { [weak self] result in
                 guard let self = self else { return }
-                self.dismiss(animated: true) {
-                    self.viewModel.endSubject.send(result)
-                    self.viewModel.endSubject.send(completion: .finished)
+                result.vc.dismiss(animated: true) {
+                    self.dismiss(animated: true) {
+                        self.viewModel.endSubject.send(result)
+                        self.viewModel.endSubject.send(completion: .finished)
+                    }
                 }
+                
             } => bag
 
             return

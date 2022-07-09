@@ -22,16 +22,13 @@ class Mockers: CategoriesProvider, TedoooOnBoardingApi, CreateShopFlowApi {
 //        navController.pre(vc, animated: true)
         let subject = PassthroughSubject<AddShopResult, AddShopError>()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            vc.dismiss(animated: true) {
-                subject.send(AddShopResult.init(vc: vc, id: "id", action: .showBusinessProfile))
-//                subject.send(completion: .failure(.flowCancelled))
-            }
+            subject.send(AddShopResult.init(vc: vc, id: "id", action: .showBusinessProfile))
         }
         return subject.eraseToAnyPublisher()
     }
     
     func startEditFlow(in viewController: UIViewController, request: EditShopFlowRequest) -> AnyPublisher<AddShopResult, AddShopError> {
-        return Fail(error: AddShopError.flowCancelled).eraseToAnyPublisher()
+        return Fail(error: AddShopError.flowCancelled(UIViewController())).eraseToAnyPublisher()
     }
     
     
