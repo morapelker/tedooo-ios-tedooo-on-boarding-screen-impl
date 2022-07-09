@@ -7,40 +7,19 @@
 //
 
 import UIKit
-import TedoooOnBoardingScreen
-import TedoooOnBoardingScreenImpl
-import Swinject
-import TedoooCategoriesApi
-import TedoooOnBoardingApi
-import CreateShopFlowApi
-import TedoooCombine
 
 class ViewController: UIViewController {
 
-    private var bag = CombineBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let container = Container()
-        
-        container.register(TedoooCategoriesApi.CategoriesProvider.self) { _ in
-            return Mockers.shared
-        }.inObjectScope(.container)
-        container.register(TedoooOnBoardingApi.self) { _ in
-            return Mockers.shared
-        }.inObjectScope(.container)
-        container.register(CreateShopFlowApi.self) { _ in
-            return Mockers.shared
-        }.inObjectScope(.container)
-        
         DispatchQueue.main.async {
-            let flow = InitialFlow(container: container)
-            flow.launchFlow(in: self).sink { result in
-                result.vc.dismiss(animated: true) {
-                    print("result from main app", result)
-                }
-            } => self.bag
+            if let navVc = self.storyboard?.instantiateViewController(withIdentifier: "TestNavController") {
+                navVc.modalPresentationStyle = .overCurrentContext
+                self.present(navVc, animated: true)
+            }
+            
         }
 
     }

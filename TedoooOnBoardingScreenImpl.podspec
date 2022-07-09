@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TedoooOnBoardingScreenImpl'
-  s.version          = '1.3.10'
+  s.version          = '1.3.11'
   s.summary          = 'TedoooOnBoardingScreenImpl'
 
 # This description is used to generate tags and improve search results.

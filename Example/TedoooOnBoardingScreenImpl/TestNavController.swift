@@ -16,7 +16,4 @@ class TestNavController: UINavigationController {
     
     let endSubject = PassthroughSubject<AddShopResult, Never>()
     
-    func launch() {
-        
-    }
 }
