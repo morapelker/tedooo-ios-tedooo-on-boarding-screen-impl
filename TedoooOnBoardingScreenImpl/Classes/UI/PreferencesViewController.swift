@@ -11,6 +11,7 @@ import Kingfisher
 import TedoooCombine
 import TedoooStyling
 import AlignedCollectionViewFlowLayout
+import CreateShopFlowApi
 
 class PreferenceCell: UICollectionViewCell {
     
@@ -98,8 +99,35 @@ class PreferencesViewController: UIViewController {
     
     @IBAction func nextClicked() {
         viewModel.confirmCategories()
-        let vc = GroupSuggestionsViewController.instantiate()
-        navigationController?.pushViewController(vc, animated: true)
+        viewModel.finishOnBoarding().sink { _ in
+            self.viewModel.onboardingComplete.send(completion: .finished)
+        } => self.bag
+        if let navController = navigationController, viewModel.interests.value.contains("sell") {
+            DIContainer.shared.resolve(CreateShopFlowApi.self).startFlow(in: navController, fromOnBoarding: true).sink { [weak self] result in
+                switch result {
+                case .finished: break
+                case .failure(let err):
+                    guard let self = self else { return }
+                    switch err {
+                    case .flowCancelled(let vc):
+                        vc.dismiss(animated: true) {
+                            self.viewModel.endSubject.send(AddShopResult(vc: self, id: "", action: .showHomePage))
+                        }
+                    }
+                }
+                self?.viewModel.endSubject.send(completion: .finished)
+            } receiveValue: { [weak self] result in
+                guard let self = self else { return }
+                result.vc.dismiss(animated: true) {
+                    self.viewModel.endSubject.send(AddShopResult(vc: self, id: result.id, action: result.action))
+                    self.viewModel.endSubject.send(completion: .finished)
+                }
+                
+            } => bag
+
+            return
+        }
+        self.navigationController?.dismiss(animated: true)
     }
 }
 

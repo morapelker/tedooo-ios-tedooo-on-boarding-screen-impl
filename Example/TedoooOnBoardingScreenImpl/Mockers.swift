@@ -14,6 +14,10 @@ import CreateShopFlowApi
 
 class Mockers: CategoriesProvider, TedoooOnBoardingApi, CreateShopFlowApi {
   
+    func hasSuggestions() -> AnyPublisher<Bool, Never> {
+        return Just(false).delay(for: 1.0, scheduler: DispatchQueue.main).eraseToAnyPublisher()
+    }
+    
     func startFlow(in viewController: UIViewController, fromOnBoarding: Bool) -> AnyPublisher<AddShopResult, AddShopError> {
         let vc = UIViewController()
         vc.view.backgroundColor = .red

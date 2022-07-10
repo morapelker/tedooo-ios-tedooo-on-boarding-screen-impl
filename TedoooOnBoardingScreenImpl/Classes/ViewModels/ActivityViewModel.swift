@@ -89,6 +89,14 @@ class ActivityViewModel {
     
     let interests = CurrentValueSubject<[String], Never>([])
     
+    enum HasSuggestionsState {
+        case hasSuggestions
+        case noSuggestions
+        case loading
+    }
+    
+    let hasSuggestions = CurrentValueSubject<HasSuggestionsState, Never>(.loading)
+    
     
     @Inject private var categoriesProvider: CategoriesProvider
     
@@ -123,6 +131,12 @@ class ActivityViewModel {
     
     private init() {
         api = DIContainer.shared.resolve(TedoooOnBoardingApi.self)
+        
+        api.hasSuggestions().sink { [weak self] hasSuggestions in
+            guard let self = self else { return }
+            self.hasSuggestions.send(hasSuggestions ? .hasSuggestions : .noSuggestions)
+            self.hasSuggestions.send(completion: .finished)
+        } => bag
         
         let cats = categoriesProvider.provideCategories()
         if !cats.instant {

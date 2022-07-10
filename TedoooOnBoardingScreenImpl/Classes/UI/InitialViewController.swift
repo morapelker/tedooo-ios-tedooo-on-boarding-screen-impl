@@ -10,6 +10,7 @@ import UIKit
 import TedoooStyling
 import TedoooCombine
 import Combine
+import TedoooFullScreenHud
 
 class InitialViewController: UIViewController {
     
@@ -83,11 +84,30 @@ class InitialViewController: UIViewController {
         subscribe()
     }
     
+    private let hud = FullScreenHud()
+    
     @IBAction func nextClicked() {
         viewModel.confirmCategories()
-        let vc = GroupSuggestionsViewController.instantiate()
-        navigationController?.pushViewController(vc, animated: true)
-        return
+        switch viewModel.hasSuggestions.value {
+        case .loading:
+            viewModel.hasSuggestions.sink { [weak self] state in
+                guard let self = self else { return }
+                switch state {
+                case .loading:
+                    self.hud.show()
+                default:
+                    self.hud.dismiss()
+                    self.nextClicked()
+                }
+            } => bag
+        case .noSuggestions:
+            let vc = PreferencesViewController.instantiate()
+            navigationController?.pushViewController(vc, animated: true)
+        case .hasSuggestions:
+            let vc = GroupSuggestionsViewController.instantiate()
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
     
     @objc private func selectedBuy() {
