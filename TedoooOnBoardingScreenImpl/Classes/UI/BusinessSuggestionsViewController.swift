@@ -171,16 +171,19 @@ class BusinessSuggestionViewController: UIViewController {
     }
     
     @IBAction func nextClicked() {
-        _ = viewModel.finishOnBoarding()
+        viewModel.finishOnBoarding().sink { _ in
+            self.viewModel.onboardingComplete.send(completion: .finished)
+        } => self.bag
         if let navController = navigationController, viewModel.interests.value.contains("sell") {
             DIContainer.shared.resolve(CreateShopFlowApi.self).startFlow(in: navController, fromOnBoarding: true).sink { [weak self] result in
                 switch result {
                 case .finished: break
                 case .failure(let err):
+                    guard let self = self else { return }
                     switch err {
                     case .flowCancelled(let vc):
                         vc.dismiss(animated: true) {
-                            self?.dismiss(animated: true)
+                            self.viewModel.endSubject.send(AddShopResult(vc: self, id: "", action: .showHomePage))
                         }
                     }
                 }

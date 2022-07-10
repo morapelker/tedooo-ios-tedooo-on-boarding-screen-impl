@@ -12,12 +12,13 @@ import Combine
 import CreateShopFlowApi
 
 public class InitialFlow: TedoooOnBoardingScreen {
+   
     
     public init(container: Container) {
         DIContainer.shared.registerContainer(container: container)
     }
     
-    public func launchFlow(in viewController: UIViewController) -> AnyPublisher<AddShopResult, Never> {
+    public func launchFlow(in viewController: UIViewController) -> FlowResult {
         let vc = InitialViewController.instantiate()
         vc.modalPresentationStyle = .overCurrentContext
         let navVc = UINavigationController(rootViewController: vc)
@@ -25,17 +26,16 @@ public class InitialFlow: TedoooOnBoardingScreen {
         navVc.modalPresentationStyle = .overCurrentContext
         let vm = ActivityViewModel.get(navController: navVc)
         viewController.present(navVc, animated: true)
-        return vm.endSubject.eraseToAnyPublisher()
-        
+        return FlowResult(endPublisher: vm.endSubject.eraseToAnyPublisher(), onboardingComplete: vm.onboardingComplete.eraseToAnyPublisher())
     }
     
-    public func launchFlow(inNavController navController: UINavigationController) -> AnyPublisher<AddShopResult, Never> {
+    public func launchFlow(inNavController navController: UINavigationController) -> FlowResult {
         let vc = InitialViewController.instantiate()
         vc.modalPresentationStyle = .overCurrentContext
         let vm = ActivityViewModel.get(navController: navController)
         navController.isNavigationBarHidden = true
         navController.pushViewController(vc, animated: true)
-        return vm.endSubject.eraseToAnyPublisher()
+        return FlowResult(endPublisher: vm.endSubject.eraseToAnyPublisher(), onboardingComplete: vm.onboardingComplete.eraseToAnyPublisher())
     }
     
 }

@@ -70,6 +70,7 @@ class ActivityViewModel {
     private var bag = CombineBag()
     
     let endSubject = PassthroughSubject<AddShopResult, Never>()
+    let onboardingComplete = PassthroughSubject<Any?, Never>()
     
     let businessSuggestions = CurrentValueSubject<[BusinessSuggestionWithSelection], Never>([])
     let loadingBusinesses = CurrentValueSubject<Bool, Never>(true)

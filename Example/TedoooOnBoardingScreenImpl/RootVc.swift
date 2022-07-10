@@ -17,8 +17,7 @@ class RootVc: UIViewController {
     private var bag = CombineBag()
     
     @IBAction func start() {
-        InitialFlow(container: TestContainer.shared.container).launchFlow(inNavController: navigationController!).sink { [weak self] result in
-            guard let self = self else { return }
+        InitialFlow(container: TestContainer.shared.container).launchFlow(inNavController: navigationController!).endPublisher.sink { result in
             result.vc.dismiss(animated: true) {
                 print("got result", result)
             }
