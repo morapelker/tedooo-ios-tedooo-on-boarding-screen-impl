@@ -58,7 +58,7 @@ class Mockers: CategoriesProvider, TedoooOnBoardingApi, CreateShopFlowApi {
     
     func getBusinessSuggestions(interests: [String]) -> AnyPublisher<[BusinessSuggestion], Never> {
         return Just([
-            BusinessSuggestion(id: "ShopId1", name: "Shop 1", rating: 5, totalReviews: 900, categories: ["Handmade Crafts", "Textile"], description: "description", image: "https://i.imgur.com/sBmKIeD.png"),
+            BusinessSuggestion(id: "shopId1", name: "TwoSisterHomenBridal.etsy.com", rating: 5, totalReviews: 900, categories: ["Handmade Crafts", "Textile", "Handmade Crafts", "Textile"], description: "description", image: "https://i.imgur.com/sBmKIeD.png"),
             BusinessSuggestion(id: "ShopId2", name: "Shop 2", rating: 4, totalReviews: 450, categories: ["Handmade Crafts", "Textile", "Homemade"], description: "description", image: nil),
             BusinessSuggestion(id: "ShopId3", name: "Shop 3", rating: 3.5, totalReviews: 1358, categories: ["Tests", "Textile"], description: "description", image: "https://i.imgur.com/r4PtogW.png")
         ]).delay(for: 2.0, scheduler: DispatchQueue.main).eraseToAnyPublisher()

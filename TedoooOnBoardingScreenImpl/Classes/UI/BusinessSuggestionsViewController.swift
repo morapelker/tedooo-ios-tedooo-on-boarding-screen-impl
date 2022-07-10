@@ -244,10 +244,10 @@ extension BusinessSuggestionViewController: UITableViewDelegate, UITableViewData
             cell.lblCategory.isHidden = true
         } else {
             cell.lblCategory.isHidden = false
-            if businessItem.categories.count <= 3 {
+            if businessItem.categories.count <= 2 {
                 cell.lblCategory.text = businessItem.categories.joined(separator: ", ")
             } else {
-                cell.lblCategory.text = businessItem.categories[0..<3].joined(separator: ", ") + "..."
+                cell.lblCategory.text = businessItem.categories[0..<2].joined(separator: ", ")
             }
         }
         BusinessSuggestionViewController.fixStars(starImageView: cell.imgStar1, starCount: 1, realCount: businessItem.rating)
