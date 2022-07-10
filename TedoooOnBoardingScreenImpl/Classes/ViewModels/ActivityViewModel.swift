@@ -172,8 +172,6 @@ class ActivityViewModel {
             return false
         }.filter({$0}).sink(receiveValue: { [weak self] _ in
             guard let self = self else { return }
-            let groupSelections = Set(self.groupSuggestions.value.filter({$0.selected.value}).map({$0.suggestion.id}))
-            let businessSelections = Set(self.businessSuggestions.value.filter({$0.selected.value}).map({$0.suggestion.id}))
             self.groupSuggestions.value = []
             self.businessSuggestions.value = []
             self.loadingGroups.value = true
@@ -181,14 +179,14 @@ class ActivityViewModel {
             let suggestions = self.api.getGroupSuggestions(interests: self.interests.value)
             suggestions.sink { [weak self] suggestions in
                 guard let self = self else { return }
-                self.groupSuggestions.value = suggestions.map({GroupSuggestionWithSelection(suggestion: $0, selected: groupSelections.contains($0.id))})
+                self.groupSuggestions.value = suggestions.map({GroupSuggestionWithSelection(suggestion: $0, selected: true)})
                 self.loadingGroups.value = false
                 self.selectionGroups.value = self.groupSuggestions.value.filter({$0.selected.value}).map({$0.suggestion.name})
             } => self.bag
             let businessSuggestions = self.api.getBusinessSuggestions(interests: self.interests.value)
             businessSuggestions.sink { [weak self] suggestions in
                 guard let self = self else { return }
-                self.businessSuggestions.value = suggestions.map({BusinessSuggestionWithSelection(suggestion: $0, selected: businessSelections.contains($0.id))})
+                self.businessSuggestions.value = suggestions.map({BusinessSuggestionWithSelection(suggestion: $0, selected: true)})
                 self.loadingBusinesses.value = false
                 self.selectionsBusiness.value = self.businessSuggestions.value.filter({$0.selected.value}).map({$0.suggestion.name})
             } => self.bag
