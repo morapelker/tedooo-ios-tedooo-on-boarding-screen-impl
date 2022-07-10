@@ -168,7 +168,7 @@ class ActivityViewModel {
         } => bag
         
         
-        confirmedCategories.withPrevious().dropFirst().map { (previous, current) -> Bool in
+        self.hasSuggestions.combineLatest(confirmedCategories.dropFirst()).filter({$0.0 == .hasSuggestions}).map({$0.1}).withPrevious().map { (previous, current) -> Bool in
             if let previous = previous {
                 if previous.categories != current.categories {
                     return true

@@ -15,7 +15,7 @@ import CreateShopFlowApi
 class Mockers: CategoriesProvider, TedoooOnBoardingApi, CreateShopFlowApi {
   
     func hasSuggestions() -> AnyPublisher<Bool, Never> {
-        return Just(false).delay(for: 1.0, scheduler: DispatchQueue.main).eraseToAnyPublisher()
+        return Just(false).delay(for: 5.0, scheduler: DispatchQueue.main).eraseToAnyPublisher()
     }
     
     func startFlow(in viewController: UIViewController, fromOnBoarding: Bool) -> AnyPublisher<AddShopResult, AddShopError> {
@@ -61,6 +61,7 @@ class Mockers: CategoriesProvider, TedoooOnBoardingApi, CreateShopFlowApi {
     }
     
     func getBusinessSuggestions(interests: [String]) -> AnyPublisher<[BusinessSuggestion], Never> {
+        print("fetching business suggestions")
         return Just([
             BusinessSuggestion(id: "shopId1", name: "TwoSisterHomenBridal.etsy.com", rating: 5, totalReviews: 900, categories: ["Handmade Crafts", "Textile", "Handmade Crafts", "Textile"], description: "description", image: "https://i.imgur.com/sBmKIeD.png"),
             BusinessSuggestion(id: "ShopId2", name: "Shop 2", rating: 4, totalReviews: 450, categories: ["Handmade Crafts", "Textile", "Homemade"], description: "description", image: nil),
@@ -69,6 +70,7 @@ class Mockers: CategoriesProvider, TedoooOnBoardingApi, CreateShopFlowApi {
     }
     
     func getGroupSuggestions(interests: [String]) -> AnyPublisher<[GroupSuggestion], Never> {
+        print("fetching group suggestions")
         return Just([
             GroupSuggestion(id: "GroupId1", name: "Wreath lovers", participants: 1500, description: "Hi there! this group is for people who are interested in Crafty fun and handmade items", image: "https://i.imgur.com/sBmKIeD.png"),
 GroupSuggestion(id: "GroupId2", name: "Crafty fun", participants: 31010, description: "Our group is made to support crafters and handmade creators meet and share tips", image: "https://i.imgur.com/r4PtogW.png"),
