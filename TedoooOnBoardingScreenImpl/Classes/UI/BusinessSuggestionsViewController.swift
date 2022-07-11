@@ -20,7 +20,6 @@ class BusinessSuggestionCell: UITableViewCell {
     @IBOutlet weak var lblShopName: UILabel!
     @IBOutlet weak var shopImage: UIImageView!
     @IBOutlet weak var lblDescription: UILabel!
-    @IBOutlet weak var lblTotalReviews: UILabel!
     @IBOutlet weak var lblCategory: UILabel!
     
     @IBOutlet weak var imgStar5: UIImageView!
@@ -38,7 +37,6 @@ class BusinessSuggestionCell: UITableViewCell {
         radioButton.setCircleColor(.black)
         lblShopName.linesCornerRadius = 8
         lblDescription.linesCornerRadius = 8
-        lblTotalReviews.linesCornerRadius = 8
         lblCategory.linesCornerRadius = 8
         
         shopImage.skeletonCornerRadius = 37
@@ -58,7 +56,6 @@ class BusinessSuggestionCell: UITableViewCell {
             radioButton.isHidden = true
             lblShopName.showAnimatedSkeleton()
             lblDescription.showAnimatedSkeleton()
-            lblTotalReviews.showAnimatedSkeleton()
             shopImage.showAnimatedSkeleton()
             lblCategory.showAnimatedSkeleton()
             
@@ -69,9 +66,7 @@ class BusinessSuggestionCell: UITableViewCell {
             imgStar5.showAnimatedSkeleton()
         } else {
             radioButton.isHidden = false
-            lblTotalReviews.hideSkeleton()
             lblDescription.hideSkeleton()
-            lblTotalReviews.hideSkeleton()
             shopImage.hideSkeleton()
             lblCategory.hideSkeleton()
             
@@ -239,7 +234,6 @@ extension BusinessSuggestionViewController: UITableViewDelegate, UITableViewData
         }
         cell.lblShopName.text = businessItem.name
         cell.lblDescription.text = businessItem.description
-        cell.lblTotalReviews.text = String(format: "(%d)", businessItem.totalReviews)
         if businessItem.categories.isEmpty {
             cell.lblCategory.isHidden = true
         } else {

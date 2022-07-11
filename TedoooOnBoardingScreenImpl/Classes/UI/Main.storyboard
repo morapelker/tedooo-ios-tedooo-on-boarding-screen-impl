@@ -976,15 +976,10 @@ DIY projects</string>
                                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                                                     </userDefinedRuntimeAttributes>
                                                                                 </imageView>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hk-Um-sJm">
+                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2d-u5-ahz">
                                                                                     <rect key="frame" x="100" y="0.0" width="128" height="16"/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                                    <color key="textColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                    <userDefinedRuntimeAttributes>
-                                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                                                    </userDefinedRuntimeAttributes>
-                                                                                </label>
+                                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                                </view>
                                                                             </subviews>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="16" id="cNM-um-9DQ"/>
@@ -1049,7 +1044,6 @@ DIY projects</string>
                                                     <outlet property="lblCategory" destination="bAO-zB-TnK" id="c7U-Vc-F9d"/>
                                                     <outlet property="lblDescription" destination="pY9-SY-yL9" id="Xep-1Y-gPI"/>
                                                     <outlet property="lblShopName" destination="jVs-OR-hs1" id="pGZ-9p-p6P"/>
-                                                    <outlet property="lblTotalReviews" destination="5Hk-Um-sJm" id="KbI-YA-klD"/>
                                                     <outlet property="radioButton" destination="cuD-li-ll6" id="TFn-ce-ygX"/>
                                                     <outlet property="shopImage" destination="cMy-0L-w2w" id="9bA-te-QKV"/>
                                                 </connections>

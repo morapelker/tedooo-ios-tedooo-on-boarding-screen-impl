@@ -15,7 +15,7 @@ import CreateShopFlowApi
 class Mockers: CategoriesProvider, TedoooOnBoardingApi, CreateShopFlowApi {
   
     func hasSuggestions() -> AnyPublisher<Bool, Never> {
-        return Just(false).delay(for: 5.0, scheduler: DispatchQueue.main).eraseToAnyPublisher()
+        return Just(true).delay(for: 1.0, scheduler: DispatchQueue.main).eraseToAnyPublisher()
     }
     
     func startFlow(in viewController: UIViewController, fromOnBoarding: Bool) -> AnyPublisher<AddShopResult, AddShopError> {
