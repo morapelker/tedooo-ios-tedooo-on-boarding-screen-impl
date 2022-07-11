@@ -179,10 +179,10 @@ class BusinessSuggestionViewController: UIViewController {
                     case .flowCancelled(let vc):
                         vc.dismiss(animated: true) {
                             self.viewModel.endSubject.send(AddShopResult(vc: self, id: "", action: .showHomePage))
+                            self.viewModel.endSubject.send(completion: .finished)
                         }
                     }
                 }
-                self?.viewModel.endSubject.send(completion: .finished)
             } receiveValue: { [weak self] result in
                 guard let self = self else { return }
                 result.vc.dismiss(animated: true) {

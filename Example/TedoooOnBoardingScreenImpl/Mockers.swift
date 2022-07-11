@@ -26,6 +26,7 @@ class Mockers: CategoriesProvider, TedoooOnBoardingApi, CreateShopFlowApi {
 //        navController.pre(vc, animated: true)
         let subject = PassthroughSubject<AddShopResult, AddShopError>()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+//            subject.send(completion: .failure(.flowCancelled(vc)))
             subject.send(AddShopResult.init(vc: vc, id: "id", action: .showBusinessProfile))
         }
         return subject.eraseToAnyPublisher()
