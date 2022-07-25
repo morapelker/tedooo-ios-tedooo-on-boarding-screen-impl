@@ -88,6 +88,7 @@ class BusinessSuggestionCell: UITableViewCell {
 
 class BusinessSuggestionViewController: UIViewController {
     
+    @IBOutlet weak var tableHeight: NSLayoutConstraint!
     @IBOutlet weak var tableSuggestions: UITableView!
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var btnSkip: UIButton!
@@ -117,7 +118,9 @@ class BusinessSuggestionViewController: UIViewController {
                 return [
                     BusinessSuggestion(id: "loading1", name: "", rating: 0, totalReviews: 0, categories: [], description: "", image: nil),
                     BusinessSuggestion(id: "loading2", name: "", rating: 0, totalReviews: 0, categories: [], description: "", image: nil),
-                    BusinessSuggestion(id: "loading3", name: "", rating: 0, totalReviews: 0, categories: [], description: "", image: nil)
+                    BusinessSuggestion(id: "loading3", name: "", rating: 0, totalReviews: 0, categories: [], description: "", image: nil),
+                    BusinessSuggestion(id: "loading4", name: "", rating: 0, totalReviews: 0, categories: [], description: "", image: nil),
+                    BusinessSuggestion(id: "loading5", name: "", rating: 0, totalReviews: 0, categories: [], description: "", image: nil)
                 ]
             }
             return suggestions.map({$0.suggestion})
@@ -200,7 +203,7 @@ class BusinessSuggestionViewController: UIViewController {
 
 extension BusinessSuggestionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.loadingBusinesses.value ? 3 : viewModel.businessSuggestions.value.count
+        return viewModel.loadingBusinesses.value ? 5 : viewModel.businessSuggestions.value.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

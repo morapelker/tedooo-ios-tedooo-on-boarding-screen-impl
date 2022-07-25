@@ -850,10 +850,10 @@ DIY projects</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="2" verticalCompressionResistancePriority="2" image="top_bg" translatesAutoresizingMaskIntoConstraints="NO" id="jbb-z7-QsI">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="418.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="218.5"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Qzc-Fy-DpY">
-                                <rect key="frame" x="0.0" y="378.5" width="414" height="29"/>
+                                <rect key="frame" x="0.0" y="178.5" width="414" height="29"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iSV-9J-sAC">
                                         <rect key="frame" x="0.0" y="14" width="68.5" height="1"/>
@@ -881,7 +881,7 @@ DIY projects</string>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="rbe-ru-iJB">
-                                <rect key="frame" x="16" y="423.5" width="382" height="422.5"/>
+                                <rect key="frame" x="16" y="223.5" width="382" height="622.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Follow shops you might like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhv-Lx-4JJ">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
@@ -890,10 +890,10 @@ DIY projects</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cdQ-68-b84">
-                                        <rect key="frame" x="0.0" y="36.5" width="382" height="300"/>
+                                        <rect key="frame" x="0.0" y="36.5" width="382" height="500"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="Wwm-Ed-HrN"/>
+                                            <constraint firstAttribute="height" constant="500" id="Wwm-Ed-HrN"/>
                                         </constraints>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellId" rowHeight="100" id="SHp-4A-j9Q" customClass="BusinessSuggestionCell" customModule="TedoooOnBoardingScreenImpl" customModuleProvider="target">
@@ -1051,7 +1051,7 @@ DIY projects</string>
                                         </prototypes>
                                     </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YT9-6F-wLE">
-                                        <rect key="frame" x="0.0" y="352.5" width="382" height="70"/>
+                                        <rect key="frame" x="0.0" y="552.5" width="382" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nJ-cn-ZEr">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="31"/>
@@ -1096,7 +1096,7 @@ DIY projects</string>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="2" verticalCompressionResistancePriority="2" image="top_shop_suggestions" translatesAutoresizingMaskIntoConstraints="NO" id="Hbz-7a-k7o">
-                                <rect key="frame" x="123.5" y="175.5" width="167" height="167.5"/>
+                                <rect key="frame" x="163.5" y="65.5" width="87" height="87.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Hbz-7a-k7o" secondAttribute="height" multiplier="1:1" id="CWY-yx-gBN"/>
                                 </constraints>
@@ -1107,7 +1107,7 @@ DIY projects</string>
                         <constraints>
                             <constraint firstItem="rbe-ru-iJB" firstAttribute="leading" secondItem="A8I-lr-R9y" secondAttribute="leading" constant="16" id="7DG-Pz-RSC"/>
                             <constraint firstItem="wYb-JB-YVx" firstAttribute="leading" secondItem="E0D-Eu-PpX" secondAttribute="leading" constant="4" id="IXX-7I-gmI"/>
-                            <constraint firstItem="Hbz-7a-k7o" firstAttribute="centerY" secondItem="jbb-z7-QsI" secondAttribute="centerY" constant="50" id="KE6-t6-VKT"/>
+                            <constraint firstItem="Hbz-7a-k7o" firstAttribute="centerY" secondItem="jbb-z7-QsI" secondAttribute="centerY" id="KE6-t6-VKT"/>
                             <constraint firstItem="jbb-z7-QsI" firstAttribute="trailing" secondItem="E0D-Eu-PpX" secondAttribute="trailing" id="MmC-Ve-Z4B"/>
                             <constraint firstItem="Hbz-7a-k7o" firstAttribute="centerX" secondItem="A8I-lr-R9y" secondAttribute="centerX" id="N7f-MJ-6On"/>
                             <constraint firstItem="jbb-z7-QsI" firstAttribute="leading" secondItem="E0D-Eu-PpX" secondAttribute="leading" id="cla-vR-nFp"/>
@@ -1125,6 +1125,7 @@ DIY projects</string>
                     <connections>
                         <outlet property="btnNext" destination="0nJ-cn-ZEr" id="Ryw-JQ-GIZ"/>
                         <outlet property="btnSkip" destination="XMQ-PH-Utu" id="2Kc-ZN-cy5"/>
+                        <outlet property="tableHeight" destination="Wwm-Ed-HrN" id="GsN-hU-qZW"/>
                         <outlet property="tableSuggestions" destination="cdQ-68-b84" id="uP4-YK-fph"/>
                     </connections>
                 </viewController>

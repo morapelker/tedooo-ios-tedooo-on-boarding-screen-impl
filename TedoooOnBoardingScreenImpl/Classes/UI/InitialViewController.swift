@@ -175,7 +175,12 @@ class InitialViewController: UIViewController {
     }
     
     @objc private func closeClicked() {
-        self.dismiss(animated: true)
+        let alert = UIAlertController(title: NSLocalizedString("Quit initial setup", comment: ""), message: NSLocalizedString("Are you sure you want to quit this initial setup?", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Skip", comment: ""), style: .destructive, handler: { _ in
+            self.dismiss(animated: true)
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel))
+        self.present(alert, animated: true)
     }
     
     

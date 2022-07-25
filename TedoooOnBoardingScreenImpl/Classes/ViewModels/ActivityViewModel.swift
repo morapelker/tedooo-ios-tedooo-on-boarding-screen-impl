@@ -198,7 +198,7 @@ class ActivityViewModel {
                 self.loadingGroups.value = false
                 self.selectionGroups.value = self.groupSuggestions.value.filter({$0.selected.value}).map({$0.suggestion.name})
             } => self.bag
-            let businessSuggestions = self.api.getBusinessSuggestions(interests: self.interests.value)
+            let businessSuggestions = self.api.getBusinessSuggestions(interests: self.interests.value, limit: 5)
             businessSuggestions.sink { [weak self] suggestions in
                 guard let self = self else { return }
                 self.businessSuggestions.value = suggestions.map({BusinessSuggestionWithSelection(suggestion: $0, selected: true)})
