@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TedoooOnBoardingScreenImpl'
-  s.version          = '1.4.1'
+  s.version          = '1.4.2'
   s.summary          = 'TedoooOnBoardingScreenImpl'
 
 # This description is used to generate tags and improve search results.
@@ -52,6 +52,7 @@ TedoooOnBoardingScreenImpl
   s.dependency 'TedoooFullScreenHud'
   s.dependency 'TedoooSkeletonView'
   s.dependency 'CreateShopFlowApi'
+  s.dependency 'TedoooAnalytics'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

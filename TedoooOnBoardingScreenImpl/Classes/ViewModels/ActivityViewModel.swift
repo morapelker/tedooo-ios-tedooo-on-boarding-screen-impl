@@ -11,6 +11,7 @@ import TedoooOnBoardingApi
 import TedoooCombine
 import TedoooCategoriesApi
 import CreateShopFlowApi
+import TedoooAnalytics
 
 
 class SelectedCategory {
@@ -129,8 +130,17 @@ class ActivityViewModel {
         }
     }
     
+    private let logger: TedoooAnalytics
+    
+    func logEvent(event: String) {
+        logger.logEvent(event, payload: nil)
+    }
+    
     private init() {
+        logger = DIContainer.shared.resolve(TedoooAnalytics.self)
         api = DIContainer.shared.resolve(TedoooOnBoardingApi.self)
+        
+        logger.logEvent("startedOnBoarding", payload: ["userId": "ios"])
         
         api.hasSuggestions().sink { [weak self] hasSuggestions in
             guard let self = self else { return }
@@ -211,8 +221,21 @@ class ActivityViewModel {
     }
     
     func finishOnBoarding() -> AnyPublisher<Any?, Never> {
+        /*logEvent("onboarding_finished", bundleOf(
+            "interestCount" to interests.value.size,
+            "join_groups" to groupSelections.value.size,
+            "follow_businesses" to businessSelections.value.size
+            
+        ))*/
+        let selectedGroups = groupSuggestions.value.filter({$0.selected.value}).map({$0.suggestion.id})
+        let selectedBusiness = businessSuggestions.value.filter({$0.selected.value}).map({$0.suggestion.id})
+        logger.logEvent("onboarding_finished", payload: [
+            "interestCount": confirmedCategories.value.interests.count,
+            "join_groups": selectedGroups.count,
+            "follow_businesses": selectedBusiness.count
+        ])
         return api.finishOnBoarding(request: FinishOnBoardingRequest(interests: confirmedCategories.value.interests, preferences: confirmedCategories.value
-            .categories.map({$0.id}), groups: groupSuggestions.value.filter({$0.selected.value}).map({$0.suggestion.id}), businesses: businessSuggestions.value.filter({$0.selected.value}).map({$0.suggestion.id})))
+            .categories.map({$0.id}), groups: selectedGroups, businesses: selectedBusiness))
     }
     
     func confirmCategories() {

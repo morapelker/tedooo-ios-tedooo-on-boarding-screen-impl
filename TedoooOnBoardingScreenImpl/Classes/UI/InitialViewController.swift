@@ -175,11 +175,15 @@ class InitialViewController: UIViewController {
     }
     
     @objc private func closeClicked() {
+        viewModel.logEvent(event: "onboarding_x_tapped")
         let alert = UIAlertController(title: NSLocalizedString("Quit initial setup", comment: ""), message: NSLocalizedString("Are you sure you want to quit this initial setup?", comment: ""), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Skip", comment: ""), style: .destructive, handler: { _ in
+            self.viewModel.logEvent(event: "onboarding_skipped")
             self.dismiss(animated: true)
         }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: { _ in
+            self.viewModel.logEvent(event: "onboarding_alert_prevented_skip")
+        }))
         self.present(alert, animated: true)
     }
     

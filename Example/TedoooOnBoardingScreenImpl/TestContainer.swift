@@ -14,6 +14,7 @@ import TedoooCategoriesApi
 import TedoooOnBoardingApi
 import CreateShopFlowApi
 import TedoooCombine
+import TedoooAnalytics
 
 class TestContainer {
     
@@ -31,6 +32,9 @@ class TestContainer {
         container.register(CreateShopFlowApi.self) { _ in
             return Mockers.shared
         }.inObjectScope(.container)
+        container.register(TedoooAnalytics.self) { _ in
+            return Mockers.shared
+        }
     }
     
 }
