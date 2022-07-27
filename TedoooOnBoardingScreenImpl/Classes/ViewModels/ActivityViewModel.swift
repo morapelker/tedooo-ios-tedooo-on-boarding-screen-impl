@@ -139,12 +139,15 @@ class ActivityViewModel {
     private init() {
         logger = DIContainer.shared.resolve(TedoooAnalytics.self)
         api = DIContainer.shared.resolve(TedoooOnBoardingApi.self)
-        
-        logger.logEvent("startedOnBoarding", payload: ["userId": "ios"])
-        
+                
         api.hasSuggestions().sink { [weak self] hasSuggestions in
             guard let self = self else { return }
             self.hasSuggestions.send(hasSuggestions ? .hasSuggestions : .noSuggestions)
+            if hasSuggestions {
+                self.logEvent(event: "onboarding_has_suggestions")
+            } else {
+                self.logEvent(event: "onboarding_no_suggestions")
+            }
             self.hasSuggestions.send(completion: .finished)
         } => bag
         
@@ -243,12 +246,14 @@ class ActivityViewModel {
     }
     
     func selectedGroupSuggestion(at index: Int) {
+        guard groupSuggestions.value.count > index else { return }
         let item = groupSuggestions.value[index]
         item.selected.value = !item.selected.value
         selectionGroups.value = groupSuggestions.value.filter({$0.selected.value}).map({$0.suggestion.name})
     }
     
     func selectedBusinessSuggestion(at index: Int) {
+        guard businessSuggestions.value.count > index else { return }
         let item = businessSuggestions.value[index]
         item.selected.value = !item.selected.value
         selectionsBusiness.value = businessSuggestions.value.filter({$0.selected.value}).map({$0.suggestion.name})

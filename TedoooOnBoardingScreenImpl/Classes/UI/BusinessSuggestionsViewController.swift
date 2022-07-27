@@ -103,6 +103,8 @@ class BusinessSuggestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.logEvent(event: "onboarding_step_business")
+        
         tableSuggestions.delegate = self
         tableSuggestions.dataSource = self
         
@@ -225,6 +227,7 @@ extension BusinessSuggestionViewController: UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! BusinessSuggestionCell
         if viewModel.loadingBusinesses.value {
             cell.setSkeleton(true)
+            cell.selectionStyle = .none
             return cell
         }
         cell.setSkeleton(false)

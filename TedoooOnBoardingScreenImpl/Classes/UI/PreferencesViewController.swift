@@ -45,6 +45,7 @@ class PreferencesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.logEvent(event: "onboarding_step_pref")
         
         self.collectionView.delegate = self
         self.collectionView.dataSource = self

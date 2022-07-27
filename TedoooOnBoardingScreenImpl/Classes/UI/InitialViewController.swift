@@ -47,6 +47,8 @@ class InitialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.logEvent(event: "onboarding_step_1")
+        
         checkSell.backgroundColor = .clear
         checkBuyItems.backgroundColor = .clear
         checkDiscoverCrafts.backgroundColor = .clear

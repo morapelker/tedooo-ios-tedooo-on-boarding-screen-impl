@@ -77,6 +77,7 @@ class GroupSuggestionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.logEvent(event: "onboarding_step_group")
         tableSuggestions.delegate = self
         tableSuggestions.dataSource = self
         
@@ -164,6 +165,7 @@ extension GroupSuggestionsViewController: UITableViewDelegate, UITableViewDataSo
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! GroupSuggestionCell
         if viewModel.loadingGroups.value {
             cell.setSkeleton(true)
+            cell.selectionStyle = .none
             return cell
         }
         cell.setSkeleton(false)
